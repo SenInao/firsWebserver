@@ -57,7 +57,9 @@ function handler(io, gameState, chessPlayers, chessGames) {
 		socket.on("chessMove", (packet) => {
 			let i = handlePackage(chessGames, packet, socket.id, io);
 			var gameData = CD.cloneDeep(chessGames[i]);
-			delete gameData.timerId;
+			if (gameData.timerId) {
+				delete gameData.timerId;
+			};
 			io.emit("gameUpdate",gameData) 
 			if (chessGames[i].player1.winner || chessGames[i].player2.winner) {
 				chessGames[i].player1.winner = false;
