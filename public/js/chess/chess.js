@@ -27,7 +27,7 @@ const BROWN = "rgba(160,82,45)";
 const BLACK = "rgba(0,0,0,0.2)";
 const YELLOW = "rgba(139,128,0, 0.6)";
 
-const pictureFolder = "/images/chess/";
+const pictureFolder = "images/chess/";
 
 const seconds = 0.001;
 const margin = 0.9;
@@ -247,7 +247,16 @@ window.onload = function () {
 
 	gameWrapper.style.display = "none";
 
-	WIDTH = Math.min(window.innerWidth*margin, window.innerHeight*margin);
+	if (window.innerWidth < window.innerHeight) {
+		WIDTH = window.innerWidth * 0.94;
+		gameWrapper.style.flexDirection = "column";
+		timers.style.flexDirection = "row";
+	} else {
+		WIDTH = Math.min(window.innerWidth*margin, window.innerHeight*margin);
+		gameWrapper.style.flexDirection = "row";
+		timers.style.flexDirection = "column";
+	};
+
 	CELLWIDTH = WIDTH/8;
 	IMGSIZE = CELLWIDTH/1.5;
 
@@ -281,7 +290,16 @@ window.onload = function () {
 };
 
 window.onresize = function() {
-	WIDTH = Math.min(window.innerWidth*margin, window.innerHeight*margin);
+	if (window.innerWidth < window.innerHeight) {
+		WIDTH = window.innerWidth * 0.94;
+		gameWrapper.style.flexDirection = "column";
+		timers.style.flexDirection = "row";
+	} else {
+		WIDTH = Math.min(window.innerWidth*margin, window.innerHeight*margin);
+		gameWrapper.style.flexDirection = "row";
+		timers.style.flexDirection = "column";
+	};
+
 	CELLWIDTH = WIDTH/8;
 	IMGSIZE = CELLWIDTH/1.5;
 	XOFFSET = IMGSIZE*takenImgMargin;

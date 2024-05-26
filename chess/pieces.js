@@ -1,5 +1,5 @@
 const CD = require("lodash");
-const {checkCollision, isCheck} = require("./utils1");
+const {checkCollision, isCheck} = require("./utils");
 
 const pictureFolder = "chess_pieces/";
 
@@ -204,6 +204,8 @@ class Pawn extends Piece {
 				possibleMoves = [[0,dir]];
 			} else if (!this.hasMoved) {
 				possibleMoves = [[0,dir*2],[0,dir]] ;
+			} else {
+				possibleMoves = [[0,dir]];
 			};
 		};
 

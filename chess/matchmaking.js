@@ -1,5 +1,6 @@
+const { wrap } = require("lodash");
 const { Game } = require("./Game");
-const { updateAllowedMoves } = require("./utils1");
+const { updateAllowedMoves } = require("./utils");
 
 function matchmaking(games, players, io) {
 	let blitzQueue = [];
