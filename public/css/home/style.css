@@ -1,0 +1,70 @@
+:root {
+    --primary-color: #09000d;
+    --secondary-color: rgb(219, 0, 0);
+    --tertiary-color: rgb(255,255,255);
+}
+
+body {
+    height: 100%;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    margin-bottom: 100px;
+    padding: 20px;
+    text-align: center;
+    font-size: 35px;
+}
+
+header .home-text{
+    font-size: 35px;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    text-shadow: 0 0 40px var(--secondary-color);
+}
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul {
+    padding: 0;
+    text-align: center;
+    list-style-type: none;
+}
+
+nav li a {
+    margin-bottom: 25px;
+    display: block;
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 25px 25px;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-shadow:0 0 4px var(--secondary-color);
+
+    border: var(--secondary-color) 2px solid;
+    border-radius: 15px;
+    box-shadow: inset
+     0 0 15px var(--secondary-color),
+     0 0 15px var(--secondary-color),
+     0 0 3px var(--tertiary-color);
+
+    transition: background-color 1s, color 1s, box-shadow 1s, opacity 1s;
+}
+
+nav li a:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transition: background-color 1s, color 1s, box-shadow 1s, opacity 1s;
+}

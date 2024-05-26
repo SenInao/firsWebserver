@@ -1,0 +1,32 @@
+:root {
+  --primary-color: #09000d;
+  --secondary-color: rgb(219, 0, 0);
+  --tertiary-color: rgb(255,255,255);
+}
+
+body {
+  height: 100vh;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 35px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-shadow: 0 0 40px var(--secondary-color);
+}
+
+a {
+  color: var(--secondary-color);
+}

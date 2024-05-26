@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/blog/profile.css" />
+    <title>Profile</title>
+  </head>
+  <body>
+    <%-include("../partials/navbar.ejs") %>
+
+    <header>
+      <div class="header-text">
+        <h1>Profile</h1>
+        <p>Here you can find all the posts of this user</p>
+      </div>
+      <div class="info-box">
+        <ul>
+          <li>Fullname:
+            <span id="fullname"><%=user.fullname%></span>
+          </li>
+          <li>Email:
+            <span id="email"><%=user.email%></span>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <% user.posts.forEach(element => { %>
+          <div class="post">
+            <h2><%=element.title%></h2>
+            <p><%= element.content.substring(0,200) %> <% if (element.content.substring(0,200).length === 200) { %>
+              ......
+            <% } %></p>
+            <a href="/blog/post/<%=element._id%>">Read More</a>
+          </div>
+        <% }); %>
+      </div>
+  </body>
+</html>

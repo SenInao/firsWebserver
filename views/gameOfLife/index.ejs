@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="/css/gameOfLife/style.css">
+		<link rel="stylesheet" type="text/css" href="/css/ai/style.css">
+		<script type="text/javascript" src="/js/gameOfLife/gameOfLife.js"></script>
+	</head>
+	<body>
+		<%-include("../partials/navbar.ejs") %>
+
+		<div class="slidecontainer">
+			<div>
+				delay time:
+				<i id="timerDisplay"></i>
+				<input type="range" min="0" max="1" value="0" class="slider" step="0.1" id="timer">
+			</div>
+			<div>
+				width:
+				<i id="widthDisplay"></i>
+				<input type="range" min="100" max="800" value="800" class="slider" id="width">
+			</div>
+			<div>
+				cellwidth:
+				<i id="cellwidthDisplay"></i>
+				<input type="range" min="1" max="10" value="10" class="slider" id="cellwidth">
+			</div>
+			<button type="button" id="start">Start</button>
+			<button type="button" id="stop">Stop</button>
+			<button type="button" id="reset">Reset</button>
+
+		</div>
+		<canvas id="canvas-1"></canvas>
+	</body>
+</html>
+

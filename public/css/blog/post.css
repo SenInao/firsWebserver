@@ -1,0 +1,64 @@
+:root {
+  --primary-color: #09000d;
+  --secondary-color: rgb(219, 0, 0);
+  --tertiary-color: rgb(255,255,255);
+}
+
+body {
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  text-align: center;
+}
+
+header h1 {
+  font-size: 50px;
+  text-shadow: 0 0 40px var(--secondary-color);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding: 2%;
+  border: var(--secondary-color) 2px solid;
+  border-radius: 15px;
+  font-size:x-large;
+  width: 50%;
+}
+
+.post p{
+  color: rgb(241, 122, 122);
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding: 2%;
+  border: var(--secondary-color) 2px solid;
+  border-radius: 15px;
+  font-size:x-large;
+  width: 50%;
+}
+
+.comment p{
+  color: rgb(241, 122, 122);
+}
+
+.comment i {
+  margin: 5px;
+}

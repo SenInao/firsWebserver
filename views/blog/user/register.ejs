@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="/css/blog/register.css" />
+  <title>Blog</title>
+</head>
+<body>
+  <%-include("../partials/navbar.ejs") %>
+
+  <div class="form-container">
+    <h1>
+      Register
+    </h1>
+
+    <small class="error">
+      <i><%=error %></i>
+    </small>
+
+    <form action="/api/v1/blog/user/register" method="post" autocomplete="off">
+      <label for="name">Full Name</label>
+      <input type="text" name="fullname" />
+
+      <label for="email">Email</label>
+      <input type="email" name="email"  />
+
+      <label for="password">Password</label>
+      <input type="password" name="password" />
+
+      <button class="glow-button" type="submit">Register</button>
+
+      <div>
+        <p>Already have an account?</p>
+        <a href="/blog/user/login">Login</a>
+      </div>
+    </form>
+  </div>
+</body>

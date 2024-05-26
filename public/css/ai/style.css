@@ -1,0 +1,64 @@
+body {
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  margin: 0;
+  padding: 0;
+}
+
+.responseWindow {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	height: 50vh;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.responseWindow h2 {
+  margin: 7vh;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: initial;
+}
+
+.responseWindow span {
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+.inputForm {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.inputForm input {
+  font-size: 20px;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  border: var(--secondary-color) 2px solid;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  outline: none;
+}
+
+.inputForm button {
+  border-radius: 0px;
+  background-color: var(--primary-color);
+  box-shadow: none;
+  transition: none;
+}
+
+.inputForm button:hover{
+  box-shadow: none;
+  transition: none;
+}

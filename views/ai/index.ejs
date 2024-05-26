@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/css/ai/style.css">
+  <script type="text/javascript" src="/js/ai/script.js"></script>
+  <title>About</title>
+</head>
+
+<body>
+
+	<%-include("../partials/navbar.ejs") %>
+
+	<div class="responseWindow">
+		<h2>
+			<% if (response) {%>
+				<% for (var i = 0; i < response.length; i++) { %>
+					<span><%=response[i];%></span>
+				<% }; %>
+			<%} else {%>
+				<span>Ask</span> <span>Me</span> <span>Anything</span>
+			<%};%>
+		</h2>
+	</div>
+
+	<form class="inputForm" action="/api/v1/ai/answer" method="post" autocomplete="off">
+		<input type="text" name="input" >
+		<button class="glow-button" type="submit">Ask</button>
+	</form>
+</body>

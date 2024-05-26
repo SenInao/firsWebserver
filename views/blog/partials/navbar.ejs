@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<header>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</header>
+
+<link rel="stylesheet" href="/css/blog/nav.css">
+
+<nav>
+  <div class="home-text">
+    <h1><a href="/">Blog</a></h1>
+  </div>
+  <ul>
+    <li><a class="glow-button" href="/blog">Home</a></li>
+    <% if  (auth) { %>
+    <li><a class="glow-button" href="/blog/post/create">Post</a></li>
+    <li><a class="glow-button" href="/blog/user/profile">Profile</a></li>
+    <li><a class="glow-button" href="/api/v1/blog/user/logout">Logout</a></li>
+    <% } else {%>
+    <li><a class="glow-button" href="/blog/user/login">Login</a></li>
+    <li><a class="glow-button" href="/blog/user/register">Register</a></li>
+    <% } %>
+  </ul>
+</nav>

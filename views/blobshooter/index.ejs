@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="/css/blobshooter/style.css">
+		<script src="socket.io/socket.io.js"></script>
+		<script type="text/javascript" src="/js/blobshooter/client.js"></script>
+        <link rel="stylesheet" href="/css/blog/createPost.css">
+	</head>
+	<body>
+		<%-include("../partials/navbar.ejs") %>
+		<div class="usernameInput">
+			<h3>Enter Username</h3>
+			<input type="text" id="name" value="">
+			<button type="button" id="button" onclick="buttonClicked()">OK</button>
+		</div>
+		<canvas id="canvas"></canvas>
+	</body>
+</html>

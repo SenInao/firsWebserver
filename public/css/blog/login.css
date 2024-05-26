@@ -1,0 +1,78 @@
+:root {
+  --primary-color: #09000d;
+  --secondary-color: rgb(219, 0, 0);
+  --tertiary-color: rgb(255,255,255);
+}
+
+body {
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  margin: 0;
+  padding: 0;
+}
+
+i {
+  border-radius: 25%;
+  animation: fadeOut 2s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    background: var(--primary-color);
+    filter: blur(5px);
+  }
+  30% {
+    background: var(--secondary-color);
+  }
+  70% {
+    background: var(--primary-color);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
+
+.form-container{
+  text-align: center;
+}
+
+.form-container form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-container form label{
+  font-size: 20px;
+  margin: 10px;
+}
+
+.form-container form input{
+  font-size: 20px;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  border: var(--secondary-color) 2px solid;
+  background-color: black;
+  color: var(--secondary-color);
+  outline: none;
+}
+
+.form-container form button{
+  background-color: var(--primary-color);
+  box-shadow: none;
+  transition: none;
+}
+
+.form-container form button:hover{
+  box-shadow: none;
+  transition: none;
+}
+
+.form-container form div {
+  margin: 1%;
+}
+
+.form-container form div a{
+  color: var(--secondary-color);
+}

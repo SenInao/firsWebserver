@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="/css/blog/login.css" />
+  <title>Blog</title>
+</head>
+<body>
+  <%-include("../partials/navbar.ejs") %>
+
+  <div class="form-container">
+    <h1>
+      Login
+    </h1>
+
+    <small class="error">
+      <i><%=error %></i>
+    </small>
+
+    <form action="/api/v1/blog/user/login" method="post" autocomplete="off">
+      <label for="email">Email</label>
+      <input type="email" name="email"  />
+
+      <label for="password">Password</label>
+      <input type="password" name="password" />
+
+      <button class="glow-button" type="submit">Login</button>
+
+      <div>
+        <p>Don't have an account?</p>
+        <a href="/blog/user/register">Register</a>
+      </div>
+    </form>
+  </div>
+</body>

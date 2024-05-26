@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Post</title>
+        <link rel="stylesheet" href="/css/blog/post.css">
+        <link rel="stylesheet" href="/css/blog/createPost.css">
+    </head>
+    <body>
+      <%-include("../partials/navbar.ejs")%>
+
+      <main>
+        <% if (post) { %>
+          <div class="container">
+            <div class="post">
+              <h2><%=post.title%></h2>
+              <p><%=post.content%></p>
+              <i>By: <%=post.user.fullname%></i>
+            </div>
+          </div>
+
+          <div class="container" id="commentContainer">
+            <h1>Comments</h1>
+            <% post.comments.forEach(element => {%>
+              <div class="comment">
+                <i><%=element.user.fullname%>:</i>
+                <p><%=element.content%></p>
+              </div>
+            <% }); %>
+          </div>
+
+          <% if (auth) {%>
+            <div class="container">
+              <form action="/api/v1/blog/comment/create/<%=post._id%>" method="post">
+                <h2>New comment</h2>
+                <textarea id="myTextarea" name="content"></textarea>
+                <button>Create</button>
+              </form>
+            </div>
+          <% } %>
+        <% } else { %>
+          <p>No post found</p>
+        <% } %>
+      </main>
+    </body>
+
+    <script>
+      var textarea = document.getElementById('myTextarea');
+      textarea.addEventListener('input', autoResize, false);
+
+      function autoResize() {
+        this.style.height = 'auto';
+        this.style.height = this.scrollHeight + 'px';
+      }
+      </script>
+</html>

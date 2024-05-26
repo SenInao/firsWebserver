@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Blog</title>
+        <link rel="stylesheet" href="css/blog/createPost.css">
+    </head>
+    <body>
+        <%-include("../partials/navbar.ejs") %>
+        <form action="/api/v1/blog/post/create" method="post">
+            <h1>Create a new comment</h1>
+            <label for="Content">Content</label>
+            <textarea name="content"></textarea>
+            <button>Create</button>
+        </form>
+    </body>
+</html>
